@@ -1,0 +1,158 @@
+Done
+-----------------------------
+zypper install git
+zypper install yast2-gtk
+zypper install yast2-nntp
+zypper install git
+zypper install wget
+zypper install yast2-ntp-client
+zypper install yast2-qt
+zypper install idzebra
+zypper install yast2-clients
+zypper install yast2
+zypper install yast2-sshd
+zypper install yast2-graphic
+zypper install yast2-ftp-server
+zypper install yast2-ftp-server
+
+
+Done 
+-----------------------------------------------------
+cpan Algorithm::CheckDigits
+cpan Biblio::EndnoteStyle
+cpan Business::ISBN
+cpan CGI::Session
+cpan CGI::Session::Serialize::yaml
+cpan Class::Accessor
+cpan DBD::SQLite2
+cpan Data::ICal
+cpan Date::Calc
+cpan Date::ICal
+cpan Email::Date
+cpan GD
+cpan GD::Barcode::UPCE
+cpan Graphics::Magick
+cpan HTML::Scrubber
+cpan HTML::Template::Pro
+cpan HTTP::OAI
+cpan JSON
+cpan Lingua::Stem
+cpan Lingua::Stem::Snowball
+cpan Locale::Currency::Format
+cpan Locale::PO
+cpan MARC::Charset
+cpan MARC::Crosswalk::DublinCore
+cpan MARC::File::XML
+cpan MIME::Lite
+cpan Mail::Sendmail
+cpan Memoize::Memcached
+cpan Net::LDAP
+cpan Net::LDAP::Filter
+cpan Net::Server
+cpan Number::Format
+cpan PDF::API2
+cpan PDF::API2::Page
+cpan PDF::API2::Simple
+cpan PDF::API2::Util
+cpan PDF::Reuse
+cpan PDF::Reuse::Barcode
+cpan PDF::Table
+cpan POE
+cpan SMS::Send
+cpan Schedule::At
+cpan Text::CSV
+cpan Text::CSV::Encoded
+cpan Text::CSV_XS
+cpan Text::Iconv
+cpan UNIVERSAL::require
+cpan XML::Dumper
+cpan XML::LibXSLT
+cpan XML::RSS
+cpan XML::SAX::Writer
+cpan Module::Install
+cpan Array:Each
+cpan ZOOM
+
+
+
+Done
+---------------------------------------------------------
+cd /opt/
+git clone git://git.koha-community.org/koha.git kohaclone
+cd kohaclone/
+git checkout -b bcl-32x origin/3.2.x
+git log
+git reset --hard 51199afbc12eeac014d6175146ab247ba495d5c7
+
+
+Done
+---------------------------------------------------------
+cpan Authen::CAS::Client
+yast -i libyaz-dev
+yast -i make
+yast -i gcc
+yast -i <install yaml packages for perl and yaml devel)
+
+
+Done
+---------------------------------------------------------
+git am -3 -i -s -u test/*.patch
+
+
+Done
+----------------------------------------------------------
+vim /usr/lib/perl5/vendor_perl/5.16.0/XML/SAX/ParserDetails.ini
+perl misc/sax_parser_print.pl
+locate ParserDetails.ini
+Parser should be set to: XML::LibXML::SAX::Parser
+
+
+Done
+---------------------------------------------------------
+grant all on koha.* to 'kohaadmin'@'localhost' identified by 'pkoha'
+
+
+
+Done
+---------------------------------------------------------
+
+
+
+Done
+---------------------------------------------------------
+In order to use mod_rewrite you can type the following command in the terminal:
+$ a2enmod rewrite
+
+
+Restart apache2 after
+$/etc/init.d/apache2 restart
+
+
+Check modules installed
+$grep -r "LoadModule" /etc/apache2
+
+
+Done
+------------------------------------------
+Zebra Indexing
+
+export KOHA_CONF=/etc/koha-dev/etc/koha-conf.xml
+export PERL5LIB=/opt/kohaclone
+
+nohup perl misc/migration_tools/rebuild_zebra.pl -b -r -v -x > zebra-index.out
+
+Done
+---------------------------------------------
+For SQL Report Queries one has to install Text::Table module
+
+cpan -i Text::Table
+
+Done 
+---------------------------------------------
+Zebra Configure
+Change below 2 lines to 30G from 4G in file /etc/koha-dev/etc/zebradb/zebra-biblios.cnf
+
+register: /etc/koha-dev/var/lib/zebradb/biblios/register:30G
+shadow: /etc/koha-dev/var/lib/zebradb/biblios/shadow:30G
+
+

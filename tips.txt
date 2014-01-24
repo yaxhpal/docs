@@ -1,0 +1,42 @@
+ Create users
+--------------
+useradd -G {group-name} username
+
+List All users
+--------------
+less /etc/passwd
+awk -F':' '{ print $1}' /etc/passwd
+
+Process status
+---------------------
+ps -ef |grep mysql
+
+
+Mysql update status
+---------------------
+show processlist;
+
+
+Task: Search all subdirectories recursively
+--------------------------------------------
+grep -r "redeem reward" /home/tom/
+
+See changing file
+----------------------------------------
+tail -f filename
+
+Installing "locate"
+--------------------------------------
+zypper in findutils-locate
+
+
+
+Installing Graphics::Magick
+---------------------------------
+install perl-GraphicsMagick
+
+
+When both opac and staff point to the same site
+------------------------------------------------
+Uncomment NameVirtualHost *:80 in file /etc/apache2/listen.conf
+

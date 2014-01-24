@@ -1,0 +1,143 @@
+http://54.228.216.127 (OPAC) Kohaclone - frontend
+/opt/kohaclone/koha-tmpl
+
+http://54.228.216.127:8080  (STAFF)
+DocumentRoot /opt/kohaclone/koha-tmpl
+
+
+username: kohaadmin
+passwd: lib@koha
+
+--------------------------------------
+Arjun Koha live detail
+
+Your membership number is ADL008616. The login details –
+
+URL : https://bcl-prod-staff.osslabs.biz/
+User ID : arjunyadav
+Password : abcd1234
+
+This is for both backend and OPAC. All the rights are assigned to you for the different modules in KOHA.
+
+------------------------------------------------------------------
+
+SELECT table_schema,
+table_name,
+ROUND(data_length/1024/1024,2) total_size_mb
+FROM information_schema.tables
+WHERE table_schema = 'koha';
+
+SELECT table_schema "koha_updatedb",
+sum( data_length + index_length ) / 1024 /
+1024 "Data Base Size in MB",
+sum( data_free )/ 1024 / 1024 "Free Space in MB"
+FROM information_schema.TABLES
+GROUP BY table_schema ; 
+
+
+CREATE DATABASE koha;
+CREATE user 'kohau'@'localhost' IDENTIFIED by 'pkoha';
+GRANT ALL ON koha.* TO 'kohau'@'localhost' IDENTIFIED BY 'pkoha';
+USE mysql;
+SELECT host,user FROM user;
+DELETE FROM user WHERE user='';
+SELECT host,user FROM user;
+FLUSH PRIVILEGES;
+QUIT
+
+
+useradd -gusers -Gmgmt -s/bin/shell -pxxxx -d/home/roger -m roger
+useradd -gkoha -s/bin/shell -plib@koha -d/home/koha -m koha
+
+resize2fs /dev/sda1
+
+
+----------------------------Koha live app -------------------
+Install yast2
+zypper in yast2
+zypper in yast2-ncurses
+zypper in yast2-qt
+zypper in yast2-gtk
+-----Till here we got graphical screen of yast 2 -- software packages not coming
+
+
+zypper install mysql-community-server
+mysqladmin -u root -p'' password lib@koha
+
+GRANT ALL ON koha.* TO 'kohaadmin'@'ip-10-226-203-99.eu-west-1.compute.internal' IDENTIFIED BY 'lib@koha';
+ssh -i koha-back-test.pem root@54.228.195.230
+ssh -i new-koha.pem root@54.228.195.183
+
+mysql -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u bcindiadb -p
+
+mysql -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u bcindiadb -p kohar < koha27.sql >out.txt
+
+CREATE user 'kohaadmin'@'localhost' IDENTIFIED by 'pkoha';
+GRANT ALL ON koha.* TO 'kohaadmin'@'localhost' IDENTIFIED BY 'pkoha';
+
+GRANT ALL ON koha.* TO 'kohaadmin'@'ip-10-208-51-81.eu-west-1.compute.internal' IDENTIFIED BY 'pkoha';
+
+GRANT ALL ON koha.* TO 'kohaadmin'@'ip-10-252-11-55.eu-west-1.compute.internal' IDENTIFIED BY 'pkoha';
+
+nohup mysql -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u kohaadmin -ppkoha koha < koha27.sql >out.txt &
+
+--Rapid radio grant permission of rds
+GRANT ALL ON koha.* TO 'kohaadmin'@'ip-10-226-203-99.eu-west-1.compute.internal' IDENTIFIED BY 'pkoha';
+
+DELIMITER |
+CREATE PROCEDURE mysql.store_time_zone ()
+IF NOT (POSITION('rdsadmin@' IN CURRENT_USER()) = 1) THEN
+SET SESSION time_zone = 'Asia/Kolkata';
+END IF |
+DELIMITER ;
+
+
+mysql -e "select distinct(email) from borrowers" -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u kohaadmin -ppkoha koha > koha-emails.txt
+
+mysql -e "select email, title, sex, firstname,surname, dateofbirth,address,address2, city,zipcode,mobile from borrowers where branchcode='CH'" -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u kohaadmin -ppkoha koha > chandigarh.txt
+
+mysql -e "select biblio_auth_number,time from zebraqueue where done=0 order by biblio_auth_number;" -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u kohaadmin -ppkoha koha > zebraqueue.txt
+
+select biblio_auth_number,time from zebraqueue where done=0 order by biblio_auth_number asc limit 100;
+---------------Crontab entry ----------------------------------------
+
+PATH=/usr/bin:/sbin:/bin:/usr/sbin
+HOME=/etc
+PERL5LIB=/opt/kohaclone
+KOHA_CONF=/etc/koha-dev-prod/etc/koha-conf.xml
+KOHA_CRON_PATH = /opt/kohaclone/misc/cronjobs
+*/5 * * * *  perl /opt/kohaclone/misc/migration_tools/rebuild_zebra.pl -b -z
+0  3 * * *  $KOHA_CRON_PATH/overdue_notices.pl -t
+45  5 * * *  $KOHA_CRON_PATH/fines.pl
+15 3 * * *  $KOHA_CRON_PATH/advance_notices.pl -c
+*/5 * * * *  $KOHA_CRON_PATH/process_message_queue.pl
+52   * * * *  $KOHA_CRON_PATH/holds/build_holds_queue.pl >/dev/null 2>&1
+30 1 * * *  $KOHA_CRON_PATH/membership_expiry.pl
+0 1  * * *  $KOHA_CRON_PATH/holds/cancel_expired_holds.pl >/dev/null 2>&1
+0 2 * * *  $KOHA_CRON_PATH/../maintenance/proc_msg_rfid_tran.pl >/dev/null 2>&1
+16 0 * * * $KOHA_CRON_PATH/cleanup_database.pl --sessions
+15 */1 * * *  $KOHA_CRON_PATH/generatepassword.pl
+
+GRANT ALL ON koha.* TO 'kohaadmin'@'ip-10-248-19-139.eu-west-1.compute.internal' IDENTIFIED BY 'pkoha';
+
+
+nohup perl misc/migration_tools/rebuild_zebra.pl -b -r -v -x > zebra-index.out &
+export PERL5LIB=/opt/kohaclone
+export PERL5LIB=/opt/kohaclone
+export KOHA_CONF=/etc/koha-dev-prod/etc/koha-conf.xml
+
+mysql -e "select biblio_auth_number from zebraqueue order by id desc limit 250;" -h bcindia.c0j58eepefoz.eu-west-1.rds.amazonaws.com -P 3306 -u kohaadmin -ppkoha koha > zebraqueue_200.txt
+
+biblionumber 492020
+ not indexed
+biblionumber 492019
+ not indexed
+biblionumber 492018
+ not indexed
+biblionumber 492017
+ not indexed
+
+
+export KOHA_CONF=/etc/koha-dev/etc/koha-conf.xml
+export PERL5LIB=/opt/kohaclone
+

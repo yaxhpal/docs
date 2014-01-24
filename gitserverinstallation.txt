@@ -1,0 +1,30 @@
+Setting up Git Server
+----------------------
+
+# On Server
+
+- Make git user [sudo adduser git]
+- Edit /home/git/.ssh/authorized_keys file to include developers' SSH public keys
+- set up empty repository (for example /home/git/repositories/project.git)
+- Initialize it [git --bare init]
+
+# On Developer-A's machine
+
+- Create project [git init; git add .; git commit -m "initial commit"]
+- Add server repository [git remote add origin git@ppus.techletsolutions.com:/home/git/repositories/project.git]
+- push project to server [git push origin master]
+
+# On Developer-B's machine
+
+- Clone the project so created [git clone git@ppus.techletsolutions.com:/home/git/repositories/project.git]
+- make changes and then push them on server [git push origin master]
+- Get server repo status [git remote show origin]
+- Do a diff [git fetch origin ; git diff master origin/master]
+- Pull changes [git pull origin master]
+
+
+Setting up EGit
+------------------
+
+
+ 

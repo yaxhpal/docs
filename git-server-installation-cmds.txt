@@ -1,0 +1,33 @@
+on server 
+----------------
+mkdir -m 770 /home/git/repositories/kohaclone.git
+cd /home/git/repositories/kohaclone.git
+git --bare init --shared=group
+
+on client
+-----------------
+git init
+git add .
+git commit -m "initial repository creation"
+git remote add origin ssh://git@ppus.techletsolutions.com/home/git/repositories/kohaclone.git
+git push origin master
+
+#Track the remote branches
+git push -u --all
+
+
+clone the project
+-----------------
+git clone ssh://git@ppus.techletsolutions.com/home/git/repositories/kohaclone.git kohaclone
+
+
+Default Configuration
+-----------------------
+Kohaclone Directory = /opt/koha/kohaclone
+
+Config Directory = /opt/koha/config/
+
+Apache Root Doc Directory = /opt/koha/kohaclone/koha-tmpl
+
+Koha conf file = /opt/koha/config/etc/koha-conf.xml
+

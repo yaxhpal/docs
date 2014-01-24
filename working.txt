@@ -1,0 +1,3 @@
+
+bx-controls-direction
+http://toha1.techletsolutions.com/opac-tmpl/prog/en/js/jquery.bxslider.js
