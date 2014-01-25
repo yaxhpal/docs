@@ -9,7 +9,9 @@ on client
 su
 mkdir /opt/koha
 chown -R <user>:<group> /opt/koha
--- Exit super user mode
+
+#Exit super user mode
+
 mkdir /opt/koha/kohaclone
 cd /opt/koha/kohaclone
 git init
@@ -24,7 +26,11 @@ git push -u --all
 
 clone the project
 -----------------
+# Would be better if we clone from Eclipse GUI
+cd /opt/koha
 git clone ssh://git@ppus.techletsolutions.com/home/git/repositories/kohaclone.git kohaclone
+
+# Now import it as existing perl projet in your Eclipse IDE
 
 
 Default Configuration
