@@ -1,0 +1,9 @@
+
+Configuration on local PC
+-----------------------------------------------------------
+Config directory = "/opt/koha/conf"
+
+Working directory = "/opt/koha/kohaclone"
+
+Database = Each developer has to have his/her own local DB
+

@@ -55,5 +55,10 @@ Name[zu]=Amaxwebhu
 Type=Directory
 
 [Dolphin]
-Timestamp=2014,1,23,17,8,18
+HeaderColumnWidths=297,70,127,170
+SortOrder=1
+SortRole=date
+Timestamp=2014,1,25,2,5,13
 Version=3
+ViewMode=1
+VisibleRoles=Details_text,Details_size,Details_date,Details_type,CustomizedDetails
