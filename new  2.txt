@@ -1,0 +1,2 @@
+export PERL5LIB=/opt/koha/kohaclone
+export KOHA_CONF=/etc/koha/conf/etc/koha-conf.xml
