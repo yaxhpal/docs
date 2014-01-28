@@ -1,0 +1,5 @@
+# Regex for matching line starting with '--'
+
+^--[a-zA-Z', \.]*[\r\n]+
+
+# 

@@ -1,0 +1,7 @@
+
+Inventory date = x
+issue date     = y
+return date    = z
+
+issued items = ( y < x and z = null) or ( y < x and x < z)
+
