@@ -32,5 +32,21 @@ GROUP BY items.itemnumber -- Select only distinct
 ORDER BY items.dateaccessioned DESC;
 
 
+SELECT items.barcode, biblio.title, biblio.author, items.datelastseen
+FROM items 
+LEFT JOIN issues     ON  (items.itemnumber = issues.itemnumber)
+LEFT JOIN old_issues ON  (items.itemnumber = old_issues.itemnumber)
+LEFT JOIN biblio     ON  (items.biblionumber = biblio.biblionumber)
+WHERE items.itype = 'BK'
+AND   items.homebranch = 'CH'
+AND   items.itemnumber = '88739'
+AND   ((issues.itemnumber IS NULL
+OR    issues.issuedate > '2013-11-10'))
+AND   ((old_issues.itemnumber IS NULL
+OR     ((old_issues.returndate < '2013-11-10' AND old_issues.issuedate < '2013-11-10')
+        OR (old_issues.returndate > '2013-11-10' AND old_issues.issuedate > '2013-11-10')))
+GROUP BY items.itemnumber
+ORDER BY 1;
+
 
 

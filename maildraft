@@ -1,0 +1,33 @@
+Hi Mayur,
+
+As you know I am working on this issue, I have following understanding and doubts, and wanted to clarify them with you:
+
+1. Total stock of DVDs is total number of DVDs at Bangalore Library whether issued, on shelf, damaged, withdrawn, lost or notforloan
+
+2. Scanned items are those for which barcodes are given in provided txt file i.e. from DB point of view, which has datelastseen as stocktaking date
+
+3. List of items issued out = Items which were on loan during stocktaking date and items which were issued before that date and are still on on loan
+
+4. List of Items in library = Items excluding those which were issued out
+
+5. Accession number is combination of item number and home branch code(?)
+
+6. Items not scanned are those which are available in library but not scanned
+
+7. Missing items are those which are marked missing in DB (? items.itemlost = 4 )
+
+8. Duplicate titles are those which have same title and author name
+
+9. Withdrawn items are those which are marked withdrawn in DB (?  items.wthdrawn =0)
+
+10. Final list of DVD’s available in library = Scanned items + on loan items - withdrawn - missing
+
+11. Deletion of items which are not scanned (point 6) and missing (point 7)
+
+12. Deletion of items ranging from 80001 to 82000 - Need more clarification on this
+
+13. Final status update in Koha = marking scanned items as seen and deleting items not seen and missing
+
+14. Total stock report and catalogue update  = Need few pointer on this such as what should such report include etc
+
+
