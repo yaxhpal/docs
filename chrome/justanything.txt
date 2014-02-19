@@ -1,1 +1,34 @@
-There are more such things in life which could be more life enhancing then just sitting and typying whatever comes into your fucking mind.
+
+020 Library and Information Science
+060/070/100-140: Journalism/Philosophy
+160-299: Logic/Ethics/Religion
+659: Advertising
+670/680: Textile/Clothing
+810: American Literature/Greek literature
+930: History of the ancient world
+940: History of Europe
+950: History of Asia
+India Collection
+
+----- done ---------------------------------
+
+510-600: Maths/Astronomy/Physics/Chemistery/Geology/Paleontology/Life Science/Botany/Zoology/Applied Science/medicine/Engineering/Agriculture/Agriculture
+
+
+
+------ Not found ---------------------------
+001 Knowledge
+
+
+--------------------------------------------
+
+
+MAT	 510-519 (Mathematics)	 175	 237	 100	 9	 497	 165	 138	 38	 43	 48	 1450	 484	 33.70
+AST	 520-529 (Astronomy)	 79	 90	 21	 8	 168	 107	 35	 10	 19	 10	 547	 157	 30.08
+PHY	 530-539 (Physics)	 160	 185	 85	 15	 474	 142	 64	 35	 47	 24	 1231	 489	 40.08
+CHEM 540-549 (Chemistry)	 93	 108	 61	 6	 292	 55	 31	 32	 15	 11	 704	 231	 33.19
+GEO	 550-559 (Geology)	 29	 52	 30	 2	 156	 47	 10	 17	 11	 9	 363	 74	 21.64
+PAL	 560-569 (Paleontology)	 3	 12	 2	  	 4	 4	 2	 1	 2	 3	 33	 5	 20.00
+BIO	 570-579 (Biology)	 207	 257	 70	 14	 711	 177	 45	 18	 24	 35	 1558	 494	 32.31
+BOT	 580-589 (Botany)	 14	 17	 35	 1	 45	 3	 3	 18	 1	 3	 140	 28	 27.72
+ZOO	 590-599 (Zoology)
