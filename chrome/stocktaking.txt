@@ -1,0 +1,39 @@
+All the items whether on shelf or issued
+-----------------------------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2454&phase=Run%20this%20report
+
+
+On Shelf Items
+--------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2449&phase=Run%20this%20report
+
+
+Checkout Items
+----------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2447&phase=Run%20this%20report
+
+
+Could not be found Items
+--------------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2450&phase=Run%20this%20report
+
+
+All Withdrawn Items
+-------------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2451&phase=Run%20this%20report
+
+
+
+All Missing Items
+------------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2452&phase=Run%20this%20report
+
+
+All the items procured since inventory date
+-------------------------------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2453&phase=Run%20this%20report
+
+
+In process Items
+--------------------
+http://libadmin.britishcouncil.co.in/cgi-bin/koha/reports/guided_reports.pl?reports=2455&phase=Run%20this%20report

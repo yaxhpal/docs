@@ -1,0 +1,22 @@
+Project environment for 'KohaTrac' created.
+
+You may now configure the environment by editing the file:
+
+  /opt/kohatrac/conf/trac.ini
+
+If you'd like to take this new project environment for a test drive,
+try running the Trac standalone web server `tracd`:
+
+  tracd --port 8000 /opt/kohatrac
+
+Then point your browser to http://localhost:8000/kohatrac.
+There you can also browse the documentation for your installed
+version of Trac, including information on further setup (such as
+deploying Trac to a real web server).
+
+The latest documentation can also always be found on the project
+website:
+
+  http://trac.edgewall.org/
+
+Congratulations!

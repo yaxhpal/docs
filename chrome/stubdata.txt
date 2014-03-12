@@ -1,0 +1,1 @@
+/* select borrowernumber, itemnumber, count(itemnumber) from old_issues group by borrowernumber */
