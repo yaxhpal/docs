@@ -1,0 +1,27 @@
+*** Configuration summary for nagios 4.0.4 03-14-2014 ***:
+
+ General Options:
+ -------------------------
+        Nagios executable:  nagios
+        Nagios user/group:  nagios,nagios
+       Command user/group:  nagios,nagios
+             Event Broker:  yes
+        Install ${prefix}:  /usr/local/nagios
+    Install ${includedir}:  /usr/local/nagios/include/nagios
+                Lock file:  ${prefix}/var/nagios.lock
+   Check result directory:  ${prefix}/var/spool/checkresults
+           Init directory:  /etc/rc.d
+  Apache conf.d directory:  /etc/apache2/conf.d
+             Mail program:  /usr/bin/mail
+                  Host OS:  linux-gnu
+          IOBroker Method:  epoll
+
+ Web Interface Options:
+ ------------------------
+                 HTML URL:  http://localhost/nagios/
+                  CGI URL:  http://localhost/nagios/cgi-bin/
+ Traceroute (used by WAP):  /usr/sbin/traceroute
+
+
+Review the options above for accuracy.  If they look okay,
+type 'make all' to compile the main program and CGIs.

@@ -1,0 +1,25 @@
+Cache-control:no-cache
+Connection:Keep-Alive
+Content-script-type:text/javascript
+Content-style-type:text/css
+Content-Type:text/html; charset=UTF-8
+Date:Tue, 25 Mar 2014 19:28:42 GMT
+Keep-Alive:timeout=15, max=100
+Pragma:no-cache
+Server:Apache
+Set-Cookie:CGISESSID=e80bb644a16c0628e022ef8ae8bf67e9; path=/
+Transfer-Encoding:chunked
+
+Cache-control:no-cache
+Connection:Keep-Alive
+Content-Encoding:gzip
+Content-Length:13419
+Content-script-type:text/javascript
+Content-style-type:text/css
+Content-Type:text/html; charset=UTF-8
+Date:Tue, 25 Mar 2014 19:34:34 GMT
+Keep-Alive:timeout=15, max=100
+Pragma:no-cache
+Server:Apache
+Set-Cookie:CGISESSID=e80bb644a16c0628e022ef8ae8bf67e9; path=/
+Vary:Accept-Encoding

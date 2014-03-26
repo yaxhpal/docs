@@ -1,0 +1,4 @@
+export PERL5LIB=/opt/kohaclone
+export KOHA_CONF=/etc/koha-dev/etc/koha-conf.xml
+export KOHA_DEBUG=1
+perl -I/opt/kohaclone/C4/SIP/ -MILS /opt/kohaclone/C4/SIP/SIPServer.pm /opt/kohaclone/C4/SIP/SIPconfig.xml >/root/sipserver.log 2>&1 &

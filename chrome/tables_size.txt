@@ -1,0 +1,179 @@
+SELECT table_name AS "Table",
+round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
+FROM information_schema.TABLES
+WHERE table_schema = "koha"
+ AND table_name = "externaldata";
+
+
+SELECT table_name AS "Tables",
+round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
+FROM information_schema.TABLES
+WHERE table_schema = "koha"
+ORDER BY (data_length + index_length) DESC;
+
+
++----------------------------------------+------------+
+| Tables                                 | Size in MB |
++----------------------------------------+------------+
+| patronimage                            |   16115.72 |
+| action_logs                            |    8894.00 |
+| message_queue                          |    6586.39 |
+| biblioitems                            |    3099.64 |
+| zebraqueue                             |    2020.97 |
+| import_records                         |    1008.03 |
+| statistics                             |     798.81 |
+| old_issues                             |     533.89 |
+| accountlines                           |     512.19 |
+| patronsignature                        |     407.91 |
+| import_items                           |     364.38 |
+| items                                  |     216.78 |
+| borrowers                              |     133.55 |
+| auth_header                            |     126.19 |
+| sessions                               |     125.94 |
+| rfid_msgs                              |     124.70 |
+| borrower_message_preferences           |      77.14 |
+| biblio                                 |      75.11 |
+| borrower_attributes                    |      45.44 |
+| borrower_message_transport_preferences |      40.11 |
+| import_biblios                         |      38.64 |
+| externaldata                           |      32.94 |
+| aqorders                               |      31.09 |
+| issues                                 |      19.42 |
+| deletedbiblioitems                     |      17.23 |
+| deleteditems                           |      15.52 |
+| marc_subfield_structure                |       8.06 |
+| import_record_matches                  |       7.03 |
+| old_reserves                           |       4.17 |
+| aqorders_items                         |       4.03 |
+| member_registration                    |       3.52 |
+| saved_sql                              |       2.58 |
+| auth_subfield_structure                |       1.72 |
+| deletedbiblio                          |       1.61 |
+| serialitems                            |       1.61 |
+| serial                                 |       1.52 |
+| aqinvoices                             |       0.64 |
+| suggestions                            |       0.56 |
+| branchtransfers                        |       0.45 |
+| issuingrules                           |       0.42 |
+| aqbasket                               |       0.41 |
+| marc_tag_structure                     |       0.36 |
+| reserves                               |       0.34 |
+| virtualshelfcontents                   |       0.34 |
+| subscription                           |       0.20 |
+| subscriptionhistory                    |       0.19 |
+| creator_batches                        |       0.17 |
+| addons                                 |       0.14 |
+| auth_tag_structure                     |       0.13 |
+| import_batches                         |       0.13 |
+| eventimage                             |       0.11 |
+| authorised_values                      |       0.11 |
+| user_permissions                       |       0.11 |
+| systempreferences                      |       0.08 |
+| deleted_rfid_msgs                      |       0.08 |
+| tmp_holdsqueue                         |       0.06 |
+| aqbudgets                              |       0.06 |
+| matchchecks                            |       0.06 |
+| class_sources                          |       0.06 |
+| hold_fill_targets                      |       0.06 |
+| virtualshelves                         |       0.06 |
+| special_holidays                       |       0.06 |
+| feeschargesrules                       |       0.06 |
+| language_descriptions                  |       0.05 |
+| search_history                         |       0.05 |
+| branchrelations                        |       0.05 |
+| tags_all                               |       0.05 |
+| plan                                   |       0.05 |
+| creator_images                         |       0.05 |
+| aqbooksellers                          |       0.05 |
+| matcher_matchpoints                    |       0.05 |
+| alert                                  |       0.05 |
+| deletedborrowers                       |       0.05 |
+| subscriptionroutinglist                |       0.05 |
+| overduerules                           |       0.05 |
+| marc_matchers                          |       0.05 |
+| nozebra                                |       0.05 |
+| letter                                 |       0.05 |
+| messages                               |       0.05 |
+| message_transports                     |       0.05 |
+| language_rfc4646_to_iso639             |       0.03 |
+| aqcontract                             |       0.03 |
+| borrower_attribute_types               |       0.03 |
+| plan_profile_exp                       |       0.03 |
+| creator_templates                      |       0.03 |
+| aqbudgets_planning                     |       0.03 |
+| message_attributes                     |       0.03 |
+| tags_index                             |       0.03 |
+| plan_profile                           |       0.03 |
+| tags_approval                          |       0.03 |
+| itemtypes                              |       0.03 |
+| matchpoints                            |       0.03 |
+| item_circulation_alert_preferences     |       0.03 |
+| matchpoint_components                  |       0.03 |
+| branch_item_rules                      |       0.03 |
+| rfidpatronstatus                       |       0.03 |
+| aqbasketgroups                         |       0.03 |
+| matchpoint_component_norms             |       0.03 |
+| edi_orders                             |       0.03 |
+| branch_borrower_circ_rules             |       0.03 |
+| patroncards                            |       0.03 |
+| accountoffsets                         |       0.03 |
+| class_sort_rules                       |       0.03 |
+| printers_profile                       |       0.03 |
+| leadcampaign                           |       0.03 |
+| language_subtag_registry               |       0.03 |
+| categories                             |       0.03 |
+| language_script_mapping                |       0.03 |
+| language_script_bidi                   |       0.03 |
+| currency                               |       0.02 |
+| export_format                          |       0.02 |
+| book                                   |       0.02 |
+| event                                  |       0.02 |
+| branches                               |       0.02 |
+| plan_details                           |       0.02 |
+| creator_layouts                        |       0.02 |
+| ethnicity                              |       0.02 |
+| biblio_framework                       |       0.02 |
+| branchcategories                       |       0.02 |
+| saved_reports                          |       0.02 |
+| aqbudgetperiods                        |       0.02 |
+| edifact_messages                       |       0.02 |
+| tags                                   |       0.02 |
+| branch_transfer_limits                 |       0.02 |
+| permissions                            |       0.02 |
+| roadtype                               |       0.02 |
+| award                                  |       0.02 |
+| coupons                                |       0.02 |
+| content                                |       0.02 |
+| collections_tracking                   |       0.02 |
+| reviews                                |       0.02 |
+| author                                 |       0.02 |
+| collections                            |       0.02 |
+| auth_types                             |       0.02 |
+| opac_news                              |       0.02 |
+| classno_category                       |       0.02 |
+| reserveconstraints                     |       0.02 |
+| stopwords                              |       0.02 |
+| z3950servers                           |       0.02 |
+| reports_dictionary                     |       0.02 |
+| default_circ_rules                     |       0.02 |
+| repeatable_holidays                    |       0.02 |
+| notifys                                |       0.02 |
+| flipslider                             |       0.02 |
+| cities                                 |       0.02 |
+| showcase                               |       0.02 |
+| default_branch_item_rules              |       0.02 |
+| fieldmapping                           |       0.02 |
+| vendor_edi_accounts                    |       0.02 |
+| circular_notice                        |       0.02 |
+| printers                               |       0.02 |
+| default_branch_circ_rules              |       0.02 |
+| popdvd                                 |       0.02 |
+| services_throttle                      |       0.02 |
+| aqorderdelivery                        |       0.02 |
+| userflags                              |       0.02 |
+| browser                                |       0.02 |
+| popbook                                |       0.02 |
+| default_borrower_circ_rules            |       0.02 |
+| message_transport_types                |       0.02 |
++----------------------------------------+------------+
+160 rows in set (1.95 sec)
