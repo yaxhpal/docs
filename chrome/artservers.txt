@@ -1,0 +1,19 @@
+Link to the admin interface below:
+http://test.art.zennstrom.com/admin/app.html#/
+---------------------------------------------------
+
+Appliance Admin URL: https://217.160.236.211:8443
+Appliance Admin User: admin
+Password: qghP89&4
+
+---------------------------------------------------
+Server login
+---------------------------------------------------
+Appliance Admin URL :	 https://217.160.236.211:4643/vz/cp
+Appliance Admin User :	root
+Password : r2k1k1B4
+
+------------------------------------------------------
+
+Live db login pwd
+oeuvres/03uvr35!

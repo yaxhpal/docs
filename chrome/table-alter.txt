@@ -1,0 +1,5 @@
+
+ALTER TABLE Artwork MODIFY COLUMN category datatype
+
+
+ALTER TABLE Artwork RENAME COLUMN category to category_id;

@@ -1,0 +1,15 @@
+openssl genrsa -des3 -out artproject.com.key 4096
+openssl req -new -key artproject.com.key -out artproject.com.csr
+openssl x509 -req -days 365 -in artproject.com.csr -signkey artproject.com.key -out artproject.com.crt
+openssl rsa -in artproject.com.key -out artproject.com.key.insecure
+
+
+- mod_ssl
+- mod_proxy
+- mod_proxy_ajp
+- mod_proxy_balancer
+- mod_proxy_connect
+- mod_proxy_ftp
+- mod_proxy_http
+- mod_rewrite
+- mod_setenvif
